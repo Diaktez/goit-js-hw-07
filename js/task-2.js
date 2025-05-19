@@ -26,25 +26,24 @@ const images = [
 ];
 //шаблонные строки и elem.insertAdjacentHTML() + map + join
 
-// const hole = document.querySelector('.gallery');
-// const createHoleList = images
-//   .map(({ url, alt }) => {
-//     return `<li> <img src ="${url}" alt = "${alt}" </li>`;
-//   })
-//   .join('');
+const hole = document.querySelector('.gallery');
+const createHoleList = images
+  .map(({ url, alt }) => {
+    return `<li> <img src ="${url}" alt = "${alt}"> </li>`;
+  })
+  .join('');
 
-// hole.insertAdjacentHTML('beforeend', createHoleList);
+hole.insertAdjacentHTML('beforeend', createHoleList);
 //======================================================
-// document.createElement()и elem.append() + forEach
+// document.createElement()и elem.append() + map
 
-const inHole = document.querySelector('.gallery');
-
-images.forEach(({ url, alt }) => {
-  const list = document.createElement('li');
-  const image = document.createElement('img');
-  image.src = url;
-  image.alt = alt;
-
-  inHole.appendChild(list);
-  list.appendChild(image);
-});
+// const inHole = document.querySelector('.gallery');
+// const inHoleImage = images.map(({ url, alt }) => {
+//   const list = document.createElement('li');
+//   const image = document.createElement('img');
+//   image.src = url;
+//   image.alt = alt;
+//   list.append(image);
+//   return list;
+// });
+// inHole.append(...inHoleImage);
